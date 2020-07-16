@@ -20,5 +20,17 @@ int main(){
     list.pop();
     list.printList();
 
+    int A[5] = {1, 3, 4, 5, 6};
+
+    doublyLinkedList list2;
+
+    list2.createListFromArray(A, 5);
+    list2.printList();
+
+    list2.addElement(24);
+    list2.printList();
+
+    list2.reverseLinkedList();
+    list2.printList();
     return 0;
 }

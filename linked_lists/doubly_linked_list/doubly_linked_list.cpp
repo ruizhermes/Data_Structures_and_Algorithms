@@ -103,3 +103,51 @@ void doublyLinkedList::pop(){
     
 
 }
+
+void doublyLinkedList::createListFromArray(int A[], int size){
+
+    doublyNode *newNode = new doublyNode();
+    newNode -> data = A[0];
+
+    head = newNode;
+    tail = newNode;
+    currentCount++;
+
+    for(int i=1; i < size; i++){
+        doublyNode *newNode = new doublyNode();
+        newNode->data = A[i];
+        newNode->next = NULL;
+        newNode->prev = tail;
+        tail->next = newNode;
+        tail = newNode;
+        currentCount++;
+    }
+
+}
+
+void doublyLinkedList::reverseLinkedList(){
+
+    doublyNode *current = new doublyNode();
+    doublyNode *temp = new doublyNode();
+
+    if(head == NULL){
+        cout << "Empty List";
+        return;
+    }
+
+    current = head;
+
+    while(current != NULL){
+        temp = current->next;
+        current->next = current->prev;
+        current->prev = temp;
+        current = current->prev;
+
+        // checks if last element in List and assigs it as 
+        // the new head of the list
+        if(current != NULL && current->next == NULL){ 
+            head = current;
+        }
+    }
+
+}

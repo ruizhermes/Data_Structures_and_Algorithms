@@ -27,6 +27,8 @@ class doublyLinkedList{
         void push(int addData);
         void pop();
         void printList();
+        void createListFromArray(int A[], int size);
+        void reverseLinkedList();
 
 
 };
